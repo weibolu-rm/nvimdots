@@ -51,6 +51,8 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
   use '9mm/vim-closer'
 
+  -- Colorscheme
+  use 'folke/tokyonight.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
