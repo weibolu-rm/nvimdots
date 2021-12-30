@@ -39,3 +39,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- VISUAL BLOCK --
+
+
+-- Telescope
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)

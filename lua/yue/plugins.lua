@@ -71,6 +71,15 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  -- use "nvim-telescope/telescope-media-files.nvim"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
 
 
