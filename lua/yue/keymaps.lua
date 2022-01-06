@@ -19,7 +19,9 @@ vim.g.maplocalleader = " "
 
 -- NORMAL --
 -- vanilla nvim-tree
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- resize with vim bindings
 keymap("n", "<C-k>", ":resize +2<CR>", opts)
