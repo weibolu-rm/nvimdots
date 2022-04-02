@@ -1,5 +1,5 @@
 -- shorthand
-o = vim.opt
+local o = vim.opt
 
 -- NVIM OPTIONS
 o.backup = false			              -- creates a backup file

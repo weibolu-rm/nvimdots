@@ -48,3 +48,9 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+
+-- Git
+keymap("n", "]g", "<cmd>Gitsigns next_hunk<cr>", opts)
+keymap("n", "[g", "<cmd>Gitsigns prev_hunk<cr>", opts)
+keymap("n", "<leader>g", "<cmd>Gitsigns preview_hunk<cr>", opts)
+

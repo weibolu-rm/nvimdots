@@ -2,3 +2,21 @@
 
 Tired of hacking together nvim configs, so building one from scratch using lua configs.
 
+## Requirements
+- Neovim 6.0+
+- `npm` for LSPs
+- `ripgrep` for Telescope fuzzy find
+- [A patched font](https://www.nerdfonts.com/) for web-devicons
+
+## Setup npm
+I recommend creating a directory for global npm in your home directory, and adding it to your PATH
+```shell
+mkdir ~/.npm-global
+npm config set prefix ~/.npm-global
+```
+
+
+In .zprofile or .profile:
+```shell
+export PATH=~/.npm-global/bin:$PATH
+```
