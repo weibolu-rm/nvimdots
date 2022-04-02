@@ -72,6 +72,7 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+  use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -86,7 +87,6 @@ return packer.startup(function(use)
   -- nvim tree
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
-
 
   -- Git
   use 'lewis6991/gitsigns.nvim'

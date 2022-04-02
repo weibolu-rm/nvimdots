@@ -6,3 +6,4 @@ end
 
 require("yue.lsp.lsp-installer")
 require("yue.lsp.handlers").setup()
+require("yue.lsp.null-ls")
