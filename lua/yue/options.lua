@@ -31,3 +31,4 @@ o.scrolloff = 8                           -- have a few lines before reaching ed
 o.sidescrolloff = 8                       -- same for sidescroll
 
 vim.cmd [[set iskeyword+=-]]              -- let - be part of "words"
+vim.cmd [[autocmd FileType lua setlocal shiftwidth=2 softtabstop=2 expandtab]]
