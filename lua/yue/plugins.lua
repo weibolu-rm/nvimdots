@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
   use '9mm/vim-closer'
   use 'vimwiki/vimwiki'
+  use 'ojroques/vim-oscyank'
 
 
   -- Colorscheme

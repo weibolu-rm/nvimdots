@@ -33,10 +33,18 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- Autoclose NvimTree if it is the only buffer left
+vim.cmd [[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
+
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
+  actions = {
+    open_file = {
+      resize_window = true
+    }
+  },
   ignore_ft_on_setup = {
     "startify",
     "dashboard",
