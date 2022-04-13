@@ -55,4 +55,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- VISUAL BLOCK --
+-- Git
+keymap("x", "ih", "<cmd>Gitsigns select_hunk<cr>", opts)
 
+-- TEXT OBJECTS --
+keymap("o", "ih", "<cmd>Gitsigns select_hunk<cr>", opts)
