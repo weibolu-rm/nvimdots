@@ -73,7 +73,7 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-  use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
+  use 'jose-elias-alvarez/null-ls.nvim' -- formatters and linters
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -83,6 +83,13 @@ return packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
+  }
+
+  -- doc
+  use {
+    'danymat/neogen',
+     requires = {'nvim-treesitter/nvim-treesitter'}
+
   }
 
   -- nvim tree

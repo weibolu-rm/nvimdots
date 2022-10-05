@@ -25,7 +25,7 @@ telescope.setup {
       --       Reduce the level of "smart" searching. A single -u won't respect .gitignore
       --       (etc.) files. Two -u flags will additionally search hidden files and
       --       directories. Three -u flags will additionally search binary files.
-      "-uu",
+      "-u",
     },
 
     mappings = {
