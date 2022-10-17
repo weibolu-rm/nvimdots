@@ -4,5 +4,12 @@ if not status_ok then
 end
 
 neogen.setup {
-  snipped_engine = "luasnip"
+  snipped_engine = "luasnip",
+  languages = {
+    python = {
+      template = {
+        annotation_convention = "numpydoc"
+      }
+    }
+  }
 }

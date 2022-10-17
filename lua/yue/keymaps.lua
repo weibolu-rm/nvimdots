@@ -42,6 +42,9 @@ keymap("n", "]g", "<cmd>Gitsigns next_hunk<cr>", opts)
 keymap("n", "[g", "<cmd>Gitsigns prev_hunk<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Gitsigns preview_hunk<cr>", opts)
 
+-- Doc
+keymap("n", "<leader>nf", "<cmd>lua require('neogen').generate({ type = 'func' })<cr>", opts)
+
 -- navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
