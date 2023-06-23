@@ -48,9 +48,9 @@ return packer.startup(function(use)
   -- Utils
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
-  use 'rstacruz/vim-closer'
   use 'vimwiki/vimwiki'
   use 'ojroques/vim-oscyank'
+  use 'windwp/nvim-autopairs'
 
 
   -- Colorscheme
