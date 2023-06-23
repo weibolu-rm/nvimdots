@@ -29,6 +29,7 @@ o.updatetime = 300                        -- faster completion (4000ms default)
 o.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 o.scrolloff = 8                           -- have a few lines before reaching edge (amazing)
 o.sidescrolloff = 8                       -- same for sidescroll
+o.cmdheight = 0                           -- don't show cmd bar when not in use
 
 vim.cmd [[set iskeyword+=-]]              -- let - be part of "words"
 vim.cmd [[autocmd FileType lua setlocal shiftwidth=2 softtabstop=2 expandtab]]

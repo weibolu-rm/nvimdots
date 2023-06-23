@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 -- NORMAL --
 
 -- NvimTree
+-- This the nvim-tree api is only available on_attach
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Formatter

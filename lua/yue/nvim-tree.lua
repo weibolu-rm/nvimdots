@@ -13,15 +13,32 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {
+local function on_attach(bufnr)
+  local status_ok, api = pcall(require, "nvim-tree.api")
+  if not status_ok then
+    return
+  end
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  local keymap = vim.keymap.set
+  -- Mappings migrated from view.mappings.list
+  keymap("n", "l", api.node.open.edit, opts("Open"))
+  keymap("n", "<CR>", api.node.open.edit, opts("Open"))
+  keymap("n", "o", api.node.open.edit, opts("Open"))
+  keymap("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+  keymap("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+end
+
+nvim_tree.setup ({
+  on_attach = on_attach,
   auto_reload_on_write = true,
   disable_netrw = true,
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
   update_cwd = false,
@@ -34,15 +51,6 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        -- user mappings go here
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
   },
   renderer = {
     indent_markers = {
@@ -86,7 +94,6 @@ nvim_tree.setup {
     update_cwd = true,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
@@ -147,84 +154,4 @@ nvim_tree.setup {
       profile = false,
     },
   },
-
-  -- disable_netrw = true,
-  -- hijack_netrw = true,
-  -- open_on_setup = false,
-  -- actions = {
-  --   open_file = {
-  --     resize_window = true
-  --   }
-  -- },
-  -- ignore_ft_on_setup = {
-  --   "startify",
-  --   "dashboard",
-  --   "alpha",
-  -- },
-  -- open_on_tab = false,
-  -- hijack_cursor = false,
-  -- update_cwd = true,
-  -- update_to_buf_dir = {
-  --   enable = true,
-  --   auto_open = true,
-  -- },
-  -- diagnostics = {
-  --   enable = true,
-  --   icons = {
-  --     hint = "",
-  --     info = "",
-  --     warning = "",
-  --     error = "",
-  --   },
-  -- },
-  -- update_focused_file = {
-  --   enable = true,
-  --   update_cwd = true,
-  --   ignore_list = {},
-  -- },
-  -- system_open = {
-  --   cmd = nil,
-  --   args = {},
-  -- },
-  -- filters = {
-  --   dotfiles = false,
-  --   custom = {},
-  -- },
-  -- git = {
-  --   enable = true,
-  --   ignore = false,
-  --   timeout = 500,
-  -- },
-  -- view = {
-  --   width = 30,
-  --   height = 30,
-  --   hide_root_folder = false,
-  --   side = "left",
-  --   auto_resize = true,
-  --   mappings = {
-  --     custom_only = false,
-  --     list = {
-  --       { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-  --       { key = "h", cb = tree_cb "close_node" },
-  --       { key = "v", cb = tree_cb "vsplit" },
-  --     },
-  --   },
-  --   number = false,
-  --   relativenumber = false,
-  -- },
-  -- trash = {
-  --   cmd = "trash",
-  --   require_confirm = true,
-  -- },
-  -- quit_on_open = 1,
-  -- git_hl = 1,
-  -- disable_window_picker = 0,
-  -- root_folder_modifier = ":t",
-  -- show_icons = {
-  --   git = 1,
-  --   folders = 1,
-  --   files = 1,
-  --   folder_arrows = 1,
-  --   tree_width = 30,
-  -- },
-}
+})

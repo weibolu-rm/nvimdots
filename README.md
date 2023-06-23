@@ -3,7 +3,7 @@
 Tired of hacking together nvim configs, so building one from scratch using lua configs.
 
 ## Requirements
-- Neovim v0.7.2
+- Neovim v0.9.0
 - `npm` for LSPs
 - `ripgrep` for Telescope fuzzy find
 - [A patched font](https://www.nerdfonts.com/) for web-devicons
